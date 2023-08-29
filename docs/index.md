@@ -11,9 +11,3 @@ Some `code` goes here.
 ### Plain codeblock
 
 A plai ncodeblock:
-
-```
-Some code here
-def myfunction()
-// some comment
-```
