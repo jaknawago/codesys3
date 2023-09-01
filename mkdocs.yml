@@ -1,4 +1,10 @@
-site_name: MkDocs Material Test Page
+site_name: Jak na WAGO - CODESYS V3.5
+nav:
+  - 'index.md'
+  - 'hardware.md'
+  - 'instalace.md'
+  - 'projekt.md'
+  - 'programovani.md'
 theme:
   name: material
   features:
@@ -11,30 +17,22 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
+  icon:
+    logo: material/tooltip-question
   language: cs
   palette:
     - scheme: default
       toggle:
         icon: material/toggle-switch-off-outline 
-        name: Switch to dark mode
-      primary: teal
-      accent: purple 
+        name: Přepnout na tmavé zobrazení
+      primary: green
+      accent: deep-orange 
     - scheme: slate 
       toggle:
         icon: material/toggle-switch
-        name: Switch to light mode    
-      primary: teal
+        name: Přepnout na světlé zobrazení    
+      primary: green
       accent: lime
-
-extra:
-  social:
-    - icon: fontawesome/brands/github-alt
-      link: https://github.com/james-willett
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/TheJamesWillett
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/willettjames/
-
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -51,6 +49,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-
+  - md_in_html
+  - pymdownx.keys
 copyright: |
-  &copy; 2023 <a href="https://github.com/james-willett"  target="_blank" rel="noopener">James Willett</a>
+  &copy; 2023 <a href="https://github.com/jaknawago"  target="_blank" rel="noopener">Jak na WAGO</a>
