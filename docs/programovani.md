@@ -22,18 +22,18 @@ Klávesové zkratky lze změnit v nastavení prostředí: `Tools` :material-arro
 ### Auto declare
 Průvodce pro deklaraci proměnných nebo úpravu existující deklarace.
 
-Postup: stisk ++alt+f2++ s kurzorem myši v bloku nebo na proměnné.
+:material-mouse: Stisk ++alt+f2++ s kurzorem myši v bloku nebo na proměnné.
 
 ### Input assistant
 Procházení nebo prohledávání existujících bloků, knihoven, proměnných a dalších. Buď ve stromové struktuře nebo s pomocí kontextového hledání.
 
-Postup: stisk ++f2++ na prázdném místě.
+:material-mouse: Stisk ++f2++ na prázdném místě.
 
 ### IntelliSense
 
 Automatické dokončování při psaní. Nabídka s možností relevantních dokončení dle kontextu.
 
-Postup: stisk ++ctrl+space++.
+:material-mouse: Stisk ++ctrl+space++.
 
 ???+ tip
     Je možné aktivovat automatické zobrazení nabídky po začátku psaní. 
@@ -45,7 +45,7 @@ Postup: stisk ++ctrl+space++.
 
 Přeložený projekt je po nahrání uložen pouze v paměti RAM. Při dalším restartu PLC se tedy smaže a jednotka nemá program. Pro zkopírování projektu do flash paměti PLC je nutné vytvořit tzv. boot project.
 
-Postup: menu `Online` :material-arrow-right-bold-box-outline: `Login` a následně menu `Online` :material-arrow-right-bold-box-outline: `Create Boot Application`.
+:material-mouse: Menu `Online` :material-arrow-right-bold-box-outline: `Login` a následně menu `Online` :material-arrow-right-bold-box-outline: `Create Boot Application`.
 
 ???+ tip
     Vytvoření boot projektu lze automatizovat nebo nastavit připomenutí při zavření vývojového prostředí. 
@@ -58,7 +58,7 @@ Boot project je reprezentován dvěma soubory `Application.app` a `Application.c
 
 Projekt je PLC uložen v podobě přeloženého binárního souboru, který nelze zpětně editovat v prostředí CODESYS. Pro tyto účely je nutné nahrát i tzv. `Source code`.  
 
-Postup: menu `Online` :material-arrow-right-bold-box-outline: `Login` a následně menu `Online` :material-arrow-right-bold-box-outline: `Sourcecode download to connected device`.
+:material-mouse: Menu `Online` :material-arrow-right-bold-box-outline: `Login` a následně menu `Online` :material-arrow-right-bold-box-outline: `Sourcecode download to connected device`.
 
 ???+ tip
     Rozsah zálohy a automatizované nahrávání lze nastavit v menu `Project` :material-arrow-right-bold-box-outline: `Project Settings` :material-arrow-right-bold-box-outline: `Sourcecode Download`.
@@ -94,7 +94,7 @@ Standardní proměnné při jakémkoliv restartu ztrácejí svoji aktuální hod
 ### Deklarace
 Pro deklaraci persistentních proměnných slouží globální seznam. 
 
-V menu ++rbutton++ `Application` :material-arrow-right-bold-box-outline: `Add Object` :material-arrow-right-bold-box-outline: `Persistent Variables`.
+:material-mouse: V menu ++rbutton++ `Application` :material-arrow-right-bold-box-outline: `Add Object` :material-arrow-right-bold-box-outline: `Persistent Variables`.
 
 ### Záloha a obnovení
 
