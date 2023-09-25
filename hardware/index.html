@@ -1,0 +1,678 @@
+
+<!doctype html>
+<html lang="cs" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../instalace/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Hardware - Jak na WAGO - CODESYS V3.5</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="deep-orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modularni-plc-rada-750" class="md-skip">
+          Přeskočit obsah
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Záhlaví">
+    <a href=".." title="Jak na WAGO - CODESYS V3.5" class="md-header__button md-logo" aria-label="Jak na WAGO - CODESYS V3.5" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-.53 0-1.04.21-1.41.59C2.21 2.96 2 3.47 2 4v12c0 .53.21 1.04.59 1.41.37.38.88.59 1.41.59h4l4 4 4-4h4c.53 0 1.04-.21 1.41-.59S22 16.53 22 16V4c0-.53-.21-1.04-.59-1.41C21.04 2.21 20.53 2 20 2m-9.95 4.04c.54-.36 1.25-.54 2.14-.54.94 0 1.69.21 2.23.62.54.42.81.98.81 1.68 0 .44-.15.83-.44 1.2-.29.36-.67.64-1.13.85-.26.15-.43.3-.52.47-.09.18-.14.4-.14.68h-2c0-.5.1-.84.29-1.08.21-.24.55-.52 1.07-.84.26-.14.47-.32.64-.54.14-.21.22-.46.22-.74 0-.3-.09-.52-.27-.69-.18-.18-.45-.26-.76-.26-.27 0-.49.07-.69.21-.16.14-.26.35-.26.63H9.27c-.05-.69.23-1.29.78-1.65M11 14v-2h2v2Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jak na WAGO - CODESYS V3.5
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hardware
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="deep-orange"  aria-label="Přepnout na tmavé zobrazení"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Přepnout na tmavé zobrazení" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="lime"  aria-label="Přepnout na světlé zobrazení"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Přepnout na světlé zobrazení" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Hledat" placeholder="Hledat" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Vyhledávání">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Vyčistit" aria-label="Vyčistit" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializace vyhledávání
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Karty" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Úvod
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Hardware
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../instalace/" class="md-tabs__link">
+        
+  
+    
+  
+  Instalace
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../projekt/" class="md-tabs__link">
+        
+  
+    
+  
+  Založení projektu
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../programovani/" class="md-tabs__link">
+        
+  
+    
+  
+  Programování
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigace" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Jak na WAGO - CODESYS V3.5" class="md-nav__button md-logo" aria-label="Jak na WAGO - CODESYS V3.5" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-.53 0-1.04.21-1.41.59C2.21 2.96 2 3.47 2 4v12c0 .53.21 1.04.59 1.41.37.38.88.59 1.41.59h4l4 4 4-4h4c.53 0 1.04-.21 1.41-.59S22 16.53 22 16V4c0-.53-.21-1.04-.59-1.41C21.04 2.21 20.53 2 20 2m-9.95 4.04c.54-.36 1.25-.54 2.14-.54.94 0 1.69.21 2.23.62.54.42.81.98.81 1.68 0 .44-.15.83-.44 1.2-.29.36-.67.64-1.13.85-.26.15-.43.3-.52.47-.09.18-.14.4-.14.68h-2c0-.5.1-.84.29-1.08.21-.24.55-.52 1.07-.84.26-.14.47-.32.64-.54.14-.21.22-.46.22-.74 0-.3-.09-.52-.27-.69-.18-.18-.45-.26-.76-.26-.27 0-.49.07-.69.21-.16.14-.26.35-.26.63H9.27c-.05-.69.23-1.29.78-1.65M11 14v-2h2v2Z"/></svg>
+
+    </a>
+    Jak na WAGO - CODESYS V3.5
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Úvod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Obsah">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modularni-plc-rada-750" class="md-nav__link">
+    Modulární PLC (řada 750)
+  </a>
+  
+    <nav class="md-nav" aria-label="Modulární PLC (řada 750)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-100" class="md-nav__link">
+    Basic 100
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pfc200" class="md-nav__link">
+    PFC200
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kompaktni-plc-rada-751" class="md-nav__link">
+    Kompaktní PLC (řada 751)
+  </a>
+  
+    <nav class="md-nav" aria-label="Kompaktní PLC (řada 751)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cc100" class="md-nav__link">
+    CC100
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edge-zarizeni-rada-752" class="md-nav__link">
+    Edge zařízení (řada 752)
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge zařízení (řada 752)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edge-controller" class="md-nav__link">
+    Edge controller
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dotykove-panely-rada-762" class="md-nav__link">
+    Dotykové panely (řada 762)
+  </a>
+  
+    <nav class="md-nav" aria-label="Dotykové panely (řada 762)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tp600" class="md-nav__link">
+    TP600
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instalace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projekt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Založení projektu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programovani/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programování
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Hardware</h1>
+
+<p>V rámci portfolia automatizace WAGO lze nalézt procesorové jednotky programovatelné v několika vývojových prostředích. Níže jsou uvedeny typy kompatibilní s CODESYS V3.5.</p>
+<h2 id="modularni-plc-rada-750">Modulární PLC (řada 750)</h2>
+<h3 id="basic-100">Basic 100</h3>
+<p>Základní procesorové jednotky v řadě modulárního
+systému 750 kompatibilní s existujícími rozšiřujícími
+kartami.</p>
+<ul>
+<li>Ekvivalent 750-89x pro CODESYS V3.5</li>
+<li>Ideální pro retrofit, konverzi stávající sestavy</li>
+<li>2 varianty: 750-8000 a 750-8001 (+ slot na SD
+kartu, napájecí modul, více paměti, více šťávy pro
+moduly)</li>
+</ul>
+<h3 id="pfc200">PFC200</h3>
+<p>Osvědčená řada výkonných PLC s mnoha
+možnostmi konektivity.</p>
+<ul>
+<li>ETHERNET, 100Base-FX, CAN, Profibus, RS232 /
+RS485, 4G modem</li>
+<li>Linux, Docker, VPN</li>
+<li>Odolná varianta XTR (teplota, vibrace, rázové
+napětí)</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Verze firmware FW23</p>
+<p>Runtime CODESYS V3.5 je podporován od firmware verze 23.</p>
+</div>
+<h2 id="kompaktni-plc-rada-751">Kompaktní PLC (řada 751)</h2>
+<h3 id="cc100">CC100</h3>
+<p>751-9301</p>
+<p>Kompaktní PLC s pevně danou sadou vstupů a výstupů.</p>
+<ul>
+<li>8DI, 4DO, 2AI, 2AO, 2NI1K/PT1K</li>
+<li>1x RS485, 2x ETHERNET, SD karta</li>
+<li>Pouzdro v souladu s DIN 43880</li>
+<li>Odnímatelné konektory</li>
+</ul>
+<h2 id="edge-zarizeni-rada-752">Edge zařízení (řada 752)</h2>
+<h3 id="edge-controller">Edge controller</h3>
+<p>752-8303/8000-002</p>
+<p>Programovatelná jednotka pro nejnáročnější úlohy
+sběru a zpracování dat.</p>
+<ul>
+<li>2x ETHERNET, 2x USB, 1x USB-C, HDMI, CAN,
+4x DI/DO, RS-232/485</li>
+<li>ARM Cortex A9 quad core</li>
+<li>TPM 2.0 čip pro šifrování dat</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Verze firmware FW24</p>
+<p>Runtime CODESYS V3.5 je podporován od firmware verze 24.</p>
+</div>
+<h2 id="dotykove-panely-rada-762">Dotykové panely (řada 762)</h2>
+<h3 id="tp600">TP600</h3>
+<p>Dotykové ovládací panely v mnoha variantách.</p>
+<ul>
+<li>Webový, vizualizační a řídící panel</li>
+<li>Úhlopříčka od 4,3 do 21,5 palců</li>
+<li>Kapacitní nebo rezistivní rozpoznání dotyku</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Verze firmware FW24</p>
+<p>Runtime CODESYS V3.5 je podporován od firmware verze 24.</p>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Zpět na začátek
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 <a href="https://github.com/jaknawago"  target="_blank" rel="noopener">Jak na WAGO</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Zkop\u00edrov\u00e1no do schr\u00e1nky", "clipboard.copy": "Kop\u00edrovat do schr\u00e1nky", "search.result.more.one": "1 dal\u0161\u00ed na t\u00e9to str\u00e1nce", "search.result.more.other": "# v\u00edce na t\u00e9to str\u00e1nce", "search.result.none": "Nenalezeny \u017e\u00e1dn\u00e9 dokumenty", "search.result.one": "Nalezen\u00fd dokument: 1", "search.result.other": "Nalezen\u00e9 dokumenty: #", "search.result.placeholder": "Pi\u0161te co se m\u00e1 vyhledat", "search.result.term.missing": "Chyb\u011bj\u00edc\u00ed", "select.version": "Vyberte verzi"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+    
+  </body>
+</html>
